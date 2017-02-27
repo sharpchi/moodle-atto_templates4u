@@ -26,16 +26,13 @@ define('ATTO_TEMPLATES_TEMPLATE_COUNT', 3);
 $settings = null;
 if (is_siteadmin()) {
     $config = get_config('atto_templates');
-    // add a templates category as we'll have a page for each template
-    $ADMIN->add('editoratto', new admin_category('atto_templates_category', new lang_string('pluginname', 'atto_templates')));
 
-    // common settings
     $settings = new admin_settingpage('atto_templates_settings', new lang_string('settings', 'atto_templates'));
     $settings->add(new admin_setting_configtext('atto_templates/templatecount',
             get_string('templatecount', 'atto_templates'),
             get_string('templatecount_desc', 'atto_templates'),
             ATTO_TEMPLATES_TEMPLATE_COUNT, PARAM_INT, 20));
-    $ADMIN->add('atto_templates_category', $settings);
+
 
     if ($config && property_exists($config, 'templatecount')) {
         $templatecount = $config->templatecount;
@@ -50,9 +47,6 @@ if (is_siteadmin()) {
         } else {
             $tname = $i;
         }
-
-        $settings = new admin_settingpage('atto_templates_templatepage_' . $i,
-                get_string('templatepageheading', 'atto_templates', $tname));
 
         $settings->add(new admin_setting_heading('atto_templates/templatepageheading_' . $i,
                 get_string('templateheading', 'atto_templates', $tname), ''));
@@ -73,7 +67,8 @@ if (is_siteadmin()) {
 				get_string('templatestyle', 'atto_templates', $i),
 				get_string('templatestyle_desc', 'atto_templates'),
 				'',PARAM_RAW));
-        $ADMIN->add('atto_templates_category', $settings);
+
     }
+    $ADMIN->add('editoratto', $settings);
 
 }
