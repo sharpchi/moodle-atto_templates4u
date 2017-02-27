@@ -23,9 +23,10 @@
 
 defined('MOODLE_INTERNAL') || die;
 define('ATTO_TEMPLATES_TEMPLATE_COUNT', 3);
-$settings = null;
+
 if (is_siteadmin()) {
     $config = get_config('atto_templates');
+    $ADMIN->add('editoratto', new admin_category('atto_templates', new lang_string('pluginname', 'atto_templates')));
 
     $settings = new admin_settingpage('atto_templates_settings', new lang_string('settings', 'atto_templates'));
     $settings->add(new admin_setting_configtext('atto_templates/templatecount',
@@ -67,8 +68,5 @@ if (is_siteadmin()) {
 				get_string('templatestyle', 'atto_templates', $i),
 				get_string('templatestyle_desc', 'atto_templates'),
 				'',PARAM_RAW));
-
     }
-    $ADMIN->add('editoratto', $settings);
-
 }
