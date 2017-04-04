@@ -92,7 +92,6 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
             templates: this._templates,
             CSS: CSS
         }));
-        //Y.log(this._content);
         this._content.one(SELECTORS.TEMPLATES).on('change', this._previewTemplate, this);
         this._content.one(SELECTORS.INSERT).on('click', this._insertTemplate, this);
         this._content.one(SELECTORS.CANCEL).on('click', this._cancel, this);
@@ -101,10 +100,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     _previewTemplate: function(e) {
         var input,
             value,
-            host,
             previewWindow;
-
-        host = this.get('host');
 
         input = e.currentTarget;
         value = input.get('value');
@@ -139,7 +135,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         this.getDialogue().hide();
     },
     _templateFilter: function(value) {
-        for (var x=0; x < this._templates.length; x++) {
+        for (var x = 0; x < this._templates.length; x++) {
             if (this._templates[x].templatekey == value) {
                 return this._templates[x];
             }
