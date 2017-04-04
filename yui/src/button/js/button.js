@@ -23,7 +23,6 @@
  */
 
  var COMPONENTNAME = 'atto_templates',
-     //LOGNAME = 'atto_templates',
      CSS = {
          TEMPLATENAME: 'atto_templates_name',
          PREVIEW: 'atto_templates_preview',
@@ -73,15 +72,11 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         });
         this._templates = this.get('templates');
     },
-    // _insertTemplate: function(e, template) {
-    //     //console.log(e);
-    // },
     _displayDialogue: function() {
         var dialogue = this.getDialogue({
             headerContent: M.util.get_string('pluginname', COMPONENTNAME),
             focusAfterHide: true,
             width: 600
-            //focusOnShowSelector: SELECTORS.TEMPLATES
         });
 
         var content = this._getDialogueContent();
@@ -114,13 +109,8 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         input = e.currentTarget;
         value = input.get('value');
         // find the template
-        var template = this._templateFilter(value); //this._templates.filter(this._templateFilter, value);
-        //Y.log(template);
-        // TODO: filter the html output, so nothing bad gets through
-        // selectedNode = Y.one(host.getSelectionParentNode());
-        // selectedNode.set('text', template);
+        var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
-        Y.log(previewWindow);
         previewWindow.setHTML(template.template);
     },
     _insertTemplate: function(e) {
@@ -138,16 +128,14 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         input = Y.one(SELECTORS.TEMPLATES); // find the template dropdown.
         value = input.get('value');
         template = this._templateFilter(value);
-        Y.log(value);
         Y.log(template);
-        // TODO: filter the html output, so nothing bad gets through
+        Y.log(input);
         host.insertContentAtFocusPoint(template.template);
         this.markUpdated();
 
     },
     _cancel: function(e) {
         e.preventDefault();
-        Y.log(this.getDialogue);
         this.getDialogue().hide();
     },
     _templateFilter: function(value) {

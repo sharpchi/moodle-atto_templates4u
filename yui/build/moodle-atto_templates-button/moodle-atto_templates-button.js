@@ -25,7 +25,6 @@ YUI.add('moodle-atto_templates-button', function (Y, NAME) {
  */
 
  var COMPONENTNAME = 'atto_templates',
-     //LOGNAME = 'atto_templates',
      CSS = {
          TEMPLATENAME: 'atto_templates_name',
          PREVIEW: 'atto_templates_preview',
@@ -75,15 +74,11 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         });
         this._templates = this.get('templates');
     },
-    // _insertTemplate: function(e, template) {
-    //     //console.log(e);
-    // },
     _displayDialogue: function() {
         var dialogue = this.getDialogue({
             headerContent: M.util.get_string('pluginname', COMPONENTNAME),
             focusAfterHide: true,
             width: 600
-            //focusOnShowSelector: SELECTORS.TEMPLATES
         });
 
         var content = this._getDialogueContent();
@@ -115,10 +110,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         input = e.currentTarget;
         value = input.get('value');
         // find the template
-        var template = this._templateFilter(value); //this._templates.filter(this._templateFilter, value);
-        // TODO: filter the html output, so nothing bad gets through
-        // selectedNode = Y.one(host.getSelectionParentNode());
-        // selectedNode.set('text', template);
+        var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
         previewWindow.setHTML(template.template);
     },
@@ -137,7 +129,6 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         input = Y.one(SELECTORS.TEMPLATES); // find the template dropdown.
         value = input.get('value');
         template = this._templateFilter(value);
-        // TODO: filter the html output, so nothing bad gets through
         host.insertContentAtFocusPoint(template.template);
         this.markUpdated();
 

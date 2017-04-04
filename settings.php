@@ -22,7 +22,10 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
-define('ATTO_TEMPLATES_TEMPLATE_COUNT', 3);
+if (!defined('ATTO_TEMPLATES_TEMPLATE_COUNT')) {
+    define('ATTO_TEMPLATES_TEMPLATE_COUNT', 3);
+}
+
 
 if (is_siteadmin()) {
     $config = get_config('atto_templates');
@@ -62,11 +65,5 @@ if (is_siteadmin()) {
  		$settings->add(new admin_setting_configtextarea('atto_templates/template_' . $i,
 				get_string('template', 'atto_templates', $i),
 				get_string('template_desc', 'atto_templates'), ''));
-
-        //template body css
-		$settings->add(new admin_setting_configtextarea('atto_templates/templatestyle_' . $i,
-				get_string('templatestyle', 'atto_templates', $i),
-				get_string('templatestyle_desc', 'atto_templates'),
-				'',PARAM_RAW));
     }
 }

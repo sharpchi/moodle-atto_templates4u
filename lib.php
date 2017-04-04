@@ -50,15 +50,14 @@ function atto_templates_params_for_js($elementid, $options, $fpoptions)
 {
     $templates = get_config('atto_templates');
     $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES_TEMPLATE_COUNT;
-    error_log("++++++++++++++++++++" . print_r($templates, true));
     $items = [];
     for ($i=1; $i <= $tcount; $i++) {
         $key = 'templatekey_' . $i;
         if (isset($templates->{$key}) && !empty(trim($templates->{$key}))) {
             $item = new stdClass();
-            $item->templatekey = $templates->{$key};
-            $item->template = $templates->{'template_' . $i};
-            $item->style = $templates->{'style_' . $i};
+            $item->templatekey = trim($templates->{'templatekey_' . $i});
+            $item->template = clean_text(
+                    $templates->{'template_' . $i}, FORMAT_HTML);
             $items[] = $item;
         }
     }
