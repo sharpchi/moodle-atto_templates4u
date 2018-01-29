@@ -15,7 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Atto_templates version
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
@@ -25,7 +24,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->component = 'atto_templates';
-$plugin->version = 2017022200;
-$plugin->release = '3.2';
+$plugin->version = 2017103000;
+$plugin->release = '3.4';
 $plugin->requires = 2016120500;
-$plugin->maturity = MATURITY_ALPHA;
+$plugin->maturity = MATURITY_STABLE;
