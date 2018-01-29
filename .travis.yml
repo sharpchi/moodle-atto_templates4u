@@ -9,6 +9,9 @@ addons:
     packages:
       - oracle-java8-installer
       - oracle-java8-set-default
+      - mysql-server-5.7
+      - mysql-client-core-5.7
+      - mysql-client-5.7
 
 cache:
   directories:
