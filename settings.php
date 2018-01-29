@@ -15,7 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Atto_templates settings
  * @package   atto_templates
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
@@ -34,9 +33,9 @@ if (is_siteadmin()) {
 
     $settings = new admin_settingpage('atto_templates_settings', new lang_string('settings', 'atto_templates'));
     $settings->add(new admin_setting_configtext('atto_templates/templatecount',
-        get_string('templatecount', 'atto_templates'),
-        get_string('templatecount_desc', 'atto_templates'),
-        ATTO_TEMPLATES_TEMPLATE_COUNT, PARAM_INT, 20));
+            get_string('templatecount', 'atto_templates'),
+            get_string('templatecount_desc', 'atto_templates'),
+            ATTO_TEMPLATES_TEMPLATE_COUNT, PARAM_INT, 20));
 
 
     if ($config && property_exists($config, 'templatecount')) {
@@ -45,12 +44,10 @@ if (is_siteadmin()) {
         $templatecount = ATTO_TEMPLATES_TEMPLATE_COUNT;
     }
 
-    for ($i =1 ; $i <= $templatecount; $i++) {
+    for ($i = 1; $i <= $templatecount; $i++ ) {
         if ($config && property_exists($config, 'templatekey_' . $i)) {
             $tname = $config->{'templatekey_' . $i};
-            if (empty($tname)) {
-                $tname = $i;
-            }
+            if (empty($tname)) { $tname = $i; }
         } else {
             $tname = $i;
         }
@@ -58,15 +55,15 @@ if (is_siteadmin()) {
         $settings->add(new admin_setting_heading('atto_templates/templatepageheading_' . $i,
                 get_string('templateheading', 'atto_templates', $tname), ''));
 
-        // Template key.
-        $settings->add(new admin_setting_configtext('atto_templates/templatekey_' . $i ,
-            get_string('templatekey', 'atto_templates', $i),
-            get_string('templatekey_desc', 'atto_templates'),
-            '', PARAM_ALPHANUMEXT));
+        //template key
+		$settings->add(new admin_setting_configtext('atto_templates/templatekey_' . $i ,
+				get_string('templatekey', 'atto_templates', $i),
+				get_string('templatekey_desc', 'atto_templates'),
+				 '', PARAM_ALPHANUMEXT));
 
-        // Template body.
-        $settings->add(new admin_setting_configtextarea('atto_templates/template_' . $i,
-            get_string('template', 'atto_templates', $i),
-            get_string('template_desc', 'atto_templates'), ''));
+        //template body
+ 		$settings->add(new admin_setting_configtextarea('atto_templates/template_' . $i,
+				get_string('template', 'atto_templates', $i),
+				get_string('template_desc', 'atto_templates'), ''));
     }
 }

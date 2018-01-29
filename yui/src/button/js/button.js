@@ -85,13 +85,13 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     },
     _getDialogueContent: function() {
         var template = Y.Handlebars.compile(TEMPLATES.FORM);
-        this._templates = this.get('templates');
         this._content = Y.Node.create(template({
             elementid: this.get('host').get('elementid'),
             component: COMPONENTNAME,
             templates: this._templates,
             CSS: CSS
         }));
+
         this._content.one(SELECTORS.TEMPLATES).on('change', this._previewTemplate, this);
         this._content.one(SELECTORS.INSERT).on('click', this._insertTemplate, this);
         this._content.one(SELECTORS.CANCEL).on('click', this._cancel, this);
@@ -100,11 +100,14 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     _previewTemplate: function(e) {
         var input,
             value,
+            host,
             previewWindow;
+
+        host = this.get('host');
 
         input = e.currentTarget;
         value = input.get('value');
-        // find the template
+        // Find the template.
         var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
         previewWindow.setHTML(template.template);
@@ -121,11 +124,9 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
             focusAfterHide: null
         }).hide();
 
-        input = Y.one(SELECTORS.TEMPLATES); // find the template dropdown.
+        input = Y.one(SELECTORS.TEMPLATES); // Find the template dropdown.
         value = input.get('value');
         template = this._templateFilter(value);
-        Y.log(template);
-        Y.log(input);
         host.insertContentAtFocusPoint(template.template);
         this.markUpdated();
 
@@ -135,7 +136,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         this.getDialogue().hide();
     },
     _templateFilter: function(value) {
-        for (var x = 0; x < this._templates.length; x++) {
+        for (var x=0; x < this._templates.length; x++) {
             if (this._templates[x].templatekey == value) {
                 return this._templates[x];
             }

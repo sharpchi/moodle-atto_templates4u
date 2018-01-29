@@ -26,8 +26,7 @@ defined('MOODLE_INTERNAL') || die;
 /**
  * Set language strings for js
  */
-function atto_templates_strings_for_js()
-{
+function atto_templates_strings_for_js() {
     global $PAGE;
     $PAGE->requires->strings_for_js(
         ['dialogtitle',
@@ -37,7 +36,7 @@ function atto_templates_strings_for_js()
          'insert',
          'cancel',
          'preview',
-     ], 'atto_templates');
+         ], 'atto_templates');
 }
 
 /**
@@ -46,12 +45,11 @@ function atto_templates_strings_for_js()
  * @param stdClass $options - the options for the editor
  * @param stdClass $fpoptions - unused
  */
-function atto_templates_params_for_js($elementid, $options, $fpoptions)
-{
+function atto_templates_params_for_js($elementid, $options, $fpoptions) {
     $templates = get_config('atto_templates');
     $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES_TEMPLATE_COUNT;
     $items = [];
-    for ($i=1; $i <= $tcount; $i++) {
+    for ($i = 1; $i <= $tcount; $i++) {
         $key = 'templatekey_' . $i;
         if (isset($templates->{$key}) && !empty(trim($templates->{$key}))) {
             $item = new stdClass();
