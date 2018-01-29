@@ -24,21 +24,21 @@ YUI.add('moodle-atto_templates-button', function (Y, NAME) {
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- var COMPONENTNAME = 'atto_templates',
+var COMPONENTNAME = 'atto_templates',
      CSS = {
-         TEMPLATENAME: 'atto_templates_name',
-         PREVIEW: 'atto_templates_preview',
-         INSERT: 'atto_templates_insert',
-         CANCEL: 'atto_templates_cancel'
+        TEMPLATENAME: 'atto_templates_name',
+        PREVIEW: 'atto_templates_preview',
+        INSERT: 'atto_templates_insert',
+        CANCEL: 'atto_templates_cancel'
      },
-     SELECTORS = {
-         TEMPLATES: '.' + CSS.TEMPLATENAME,
-         INSERT: '.' + CSS.INSERT,
-         PREVIEW: '.' + CSS.PREVIEW,
-         CANCEL: '.' + CSS.CANCEL
+    SELECTORS = {
+        TEMPLATES: '.' + CSS.TEMPLATENAME,
+        INSERT: '.' + CSS.INSERT,
+        PREVIEW: '.' + CSS.PREVIEW,
+        CANCEL: '.' + CSS.CANCEL
      },
-     TEMPLATES = {
-         FORM: '' +
+    TEMPLATES = {
+        FORM: '' +
             '<form class="atto_form">' +
                 '<div class="form-group">' +
                     '<label for="{{elementid}}_{{CSS.TEMPLATENAME}}">{{{get_string "selectatemplate" component}}}</label>' +
@@ -61,7 +61,7 @@ YUI.add('moodle-atto_templates-button', function (Y, NAME) {
                     '<button class="btn btn-secondary {{CSS.CANCEL}}">{{get_string "cancel" component}}</button>' +
                 '</div>' +
             '</form>'
-     };
+    };
 
 Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     _content: null,
