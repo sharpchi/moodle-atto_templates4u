@@ -23,20 +23,20 @@
  */
 
  var COMPONENTNAME = 'atto_templates',
-     CSS = {
-         TEMPLATENAME: 'atto_templates_name',
-         PREVIEW: 'atto_templates_preview',
-         INSERT: 'atto_templates_insert',
-         CANCEL: 'atto_templates_cancel'
-     },
-     SELECTORS = {
-         TEMPLATES: '.' + CSS.TEMPLATENAME,
-         INSERT: '.' + CSS.INSERT,
-         PREVIEW: '.' + CSS.PREVIEW,
-         CANCEL: '.' + CSS.CANCEL
-     },
-     TEMPLATES = {
-         FORM: '' +
+    CSS = {
+        TEMPLATENAME: 'atto_templates_name',
+        PREVIEW: 'atto_templates_preview',
+        INSERT: 'atto_templates_insert',
+        CANCEL: 'atto_templates_cancel'
+    },
+    SELECTORS = {
+        TEMPLATES: '.' + CSS.TEMPLATENAME,
+        INSERT: '.' + CSS.INSERT,
+        PREVIEW: '.' + CSS.PREVIEW,
+        CANCEL: '.' + CSS.CANCEL
+    },
+    TEMPLATES = {
+        FORM: '' +
             '<form class="atto_form">' +
                 '<div class="form-group">' +
                     '<label for="{{elementid}}_{{CSS.TEMPLATENAME}}">{{{get_string "selectatemplate" component}}}</label>' +
@@ -59,7 +59,7 @@
                     '<button class="btn btn-secondary {{CSS.CANCEL}}">{{get_string "cancel" component}}</button>' +
                 '</div>' +
             '</form>'
-     };
+    };
 
 Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     _content: null,
@@ -104,7 +104,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
 
         input = e.currentTarget;
         value = input.get('value');
-        // find the template
+        // Find the template.
         var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
         previewWindow.setHTML(template.template);
@@ -121,7 +121,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
             focusAfterHide: null
         }).hide();
 
-        input = Y.one(SELECTORS.TEMPLATES); // find the template dropdown.
+        input = Y.one(SELECTORS.TEMPLATES); // Find the template dropdown.
         value = input.get('value');
         template = this._templateFilter(value);
         Y.log(template);

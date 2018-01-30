@@ -45,7 +45,7 @@ if (is_siteadmin()) {
         $templatecount = ATTO_TEMPLATES_TEMPLATE_COUNT;
     }
 
-    for ($i =1 ; $i <= $templatecount; $i++) {
+    for ($i = 1; $i <= $templatecount; $i++) {
         if ($config && property_exists($config, 'templatekey_' . $i)) {
             $tname = $config->{'templatekey_' . $i};
             if (empty($tname)) {
