@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->component = 'atto_templates';
-$plugin->version = 2017103001;
-$plugin->release = '3.4';
-$plugin->requires = 2016120500;
+$plugin->version = 2018041300;
+$plugin->release = '3.4.2';
+$plugin->requires = 2017111302;
 $plugin->maturity = MATURITY_STABLE;
