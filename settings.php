@@ -45,6 +45,11 @@ if (is_siteadmin()) {
         $templatecount = ATTO_TEMPLATES_TEMPLATE_COUNT;
     }
 
+    $settings->add(new admin_setting_configcheckbox('atto_templates/cleantext',
+        new lang_string('cleanhtml', 'atto_templates'),
+        new lang_string('cleanhtml_desc', 'atto_templates'),
+        '1'));
+
     for ($i = 1; $i <= $templatecount; $i++) {
         if ($config && property_exists($config, 'templatekey_' . $i)) {
             $tname = $config->{'templatekey_' . $i};

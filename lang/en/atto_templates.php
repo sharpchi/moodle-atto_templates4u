@@ -24,6 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+$string['cleanhtml'] = 'Clean HTML';
+$string['cleanhtml_desc'] = 'If checked, the template HTML will be cleaned by Moodle before displaying. This will tidy-up the HTML,
+ but will leave IDs and classes.';
 $string['pluginname'] = 'Templates';
 $string['settings'] = 'Template settings';
 

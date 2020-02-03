@@ -56,8 +56,12 @@ function atto_templates_params_for_js($elementid, $options, $fpoptions) {
         if (isset($templates->{$key}) && !empty(trim($templates->{$key}))) {
             $item = new stdClass();
             $item->templatekey = trim($templates->{'templatekey_' . $i});
-            $item->template = clean_text(
-                    $templates->{'template_' . $i}, FORMAT_HTML);
+            if ($templates->cleanhtml) {
+                $item->template = purify_html(
+                    $templates->{'template_' . $i}, ['allowid' => true]);
+            } else {
+                $item->template = $templates->{'template_' . $i};
+            }
             $items[] = $item;
         }
     }

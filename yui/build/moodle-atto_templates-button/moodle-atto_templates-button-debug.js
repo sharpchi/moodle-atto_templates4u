@@ -109,6 +109,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         // Find the template.
         var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
+        // Y.log(template.template);
         previewWindow.setHTML(template.template);
     },
     _insertTemplate: function(e) {
@@ -126,11 +127,7 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
         input = Y.one(SELECTORS.TEMPLATES); // Find the template dropdown.
         value = input.get('value');
         template = this._templateFilter(value);
-        // Y.log(template);
-        // Y.log(input);
-        host.enableCssStyling();
         host.insertContentAtFocusPoint(template.template);
-        host.disableCssStyling();
         this.markUpdated();
 
     },
