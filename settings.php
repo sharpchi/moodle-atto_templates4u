@@ -45,7 +45,7 @@ if (is_siteadmin()) {
         $templatecount = ATTO_TEMPLATES_TEMPLATE_COUNT;
     }
 
-    $settings->add(new admin_setting_configcheckbox('atto_templates/cleantext',
+    $settings->add(new admin_setting_configcheckbox('atto_templates/cleanhtml',
         new lang_string('cleanhtml', 'atto_templates'),
         new lang_string('cleanhtml_desc', 'atto_templates'),
         '1'));
