@@ -15,17 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Templates version file.
- * @package   atto_templates
- * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Capabilities for the atto templates plugin.
+ *
+ * @package    atto_templates
+ * @author     Mark Sharp <m.sharp@chi.ac.uk>
+ * @copyright  2020 University of Chichester {@link www.chi.ac.uk}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'atto_templates';
-$plugin->version = 2020013005;
-$plugin->release = '3.8.0';
-$plugin->requires = 2017111302;
-$plugin->maturity = MATURITY_STABLE;
+$capabilities = [
+    'atto/templates:usetemplates' => [
+        'captype'       => 'write',
+        'contextlevel'  => CONTEXT_COURSE,
+        'archetypes'    => [
+            'coursecreator' => CAP_ALLOW,
+            'teacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'student' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ],
+    ],
+];
+

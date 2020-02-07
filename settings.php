@@ -50,6 +50,11 @@ if (is_siteadmin()) {
         new lang_string('cleanhtml_desc', 'atto_templates'),
         '1'));
 
+    $settings->add(new admin_setting_configcheckbox('atto_templates/requirecap',
+        get_string('requirecap', 'atto_templates'),
+        get_string('requirecap_desc', 'atto_templates'),
+        0));
+
     for ($i = 1; $i <= $templatecount; $i++) {
         if ($config && property_exists($config, 'templatekey_' . $i)) {
             $tname = $config->{'templatekey_' . $i};

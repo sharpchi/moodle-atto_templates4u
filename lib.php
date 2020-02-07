@@ -48,6 +48,7 @@ function atto_templates_strings_for_js() {
  * @return array List of templates
  */
 function atto_templates_params_for_js($elementid, $options, $fpoptions) {
+    global $COURSE;
     $templates = get_config('atto_templates');
     $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES_TEMPLATE_COUNT;
     $items = [];
@@ -65,7 +66,10 @@ function atto_templates_params_for_js($elementid, $options, $fpoptions) {
             $items[] = $item;
         }
     }
-    return array('templates' => $items);
+
+    $coursecontext = context_course::instance($COURSE->id);
+    $enablebutton = ($templates->requirecap) ? has_capability('atto/templates:usetemplates', $coursecontext) : true;
+    return array('templates' => $items, 'enablebutton' => $enablebutton);
 }
 
 /**

@@ -38,6 +38,10 @@ $string['insert'] = 'Insert';
 $string['cancel'] = 'Cancel';
 $string['preview'] = 'Preview';
 
+$string['templates:usetemplates'] = 'Use templates plugin in Atto editor';
+$string['requirecap'] = 'Require capability';
+$string['requirecap_desc'] = 'Require capability before showing templates button';
+
 $string['templatepageheading'] = 'Template: {$a}';
 $string['templateheading'] = 'Settings for Template: {$a}';
 $string['templatecount'] = 'Template count';

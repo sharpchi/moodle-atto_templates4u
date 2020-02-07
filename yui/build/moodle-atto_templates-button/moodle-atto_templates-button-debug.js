@@ -67,6 +67,10 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     _content: null,
     _templates: [],
     initializer: function() {
+        if (!this.get('enablebutton')) {
+            return;
+        }
+
         this.addButton({
             icon: 'icon',
             iconComponent: COMPONENTNAME,
@@ -147,6 +151,9 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     ATTRS: {
         templates: {
             value: {}
+        },
+        enablebutton: {
+            value: false
         }
     }
 });
