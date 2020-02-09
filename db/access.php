@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 $capabilities = [
     'atto/templates:usetemplates' => [
         'captype'       => 'write',
-        'contextlevel'  => CONTEXT_COURSE,
+        'contextlevel'  => CONTEXT_MODULE,
         'archetypes'    => [
             'coursecreator' => CAP_ALLOW,
             'teacher' => CAP_ALLOW,
