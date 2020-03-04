@@ -15,17 +15,27 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Templates4U version file.
- * @package   atto_templates4u
- * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * Capabilities for the atto templates4u plugin.
+ *
+ * @package    atto_templates4u
+ * @author     Mark Sharp <m.sharp@chi.ac.uk>
+ * @copyright  2020 University of Chichester {@link www.chi.ac.uk}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'atto_templates4u';
-$plugin->version = 2020030400;
-$plugin->release = '3.8.1';
-$plugin->requires = 2017111302;
-$plugin->maturity = MATURITY_STABLE;
+$capabilities = [
+    'atto/templates4u:usetemplates' => [
+        'captype'       => 'write',
+        'contextlevel'  => CONTEXT_COURSE,
+        'archetypes'    => [
+            'coursecreator' => CAP_ALLOW,
+            'teacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'student' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ],
+    ],
+];
+

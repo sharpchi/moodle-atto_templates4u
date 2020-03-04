@@ -17,7 +17,7 @@ YUI.add('moodle-atto_templates4u-button', function (Y, NAME) {
 
 
 /**
- * Atto Templates - YUI file
+ * Atto Templates4U - YUI file
  * @package   atto_templates4u
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
@@ -113,7 +113,6 @@ Y.namespace('M.atto_templates4u').Button = Y.Base.create('button', Y.M.editor_at
         // Find the template.
         var template = this._templateFilter(value);
         previewWindow = Y.one(SELECTORS.PREVIEW);
-        // Y.log(template.template);
         previewWindow.setHTML(template.template);
     },
     _insertTemplate: function(e) {

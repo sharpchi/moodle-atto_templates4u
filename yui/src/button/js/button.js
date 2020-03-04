@@ -15,19 +15,19 @@
 
 
 /**
- * Atto Templates - YUI file
- * @package   atto_templates
+ * Atto Templates4U - YUI file
+ * @package   atto_templates4u
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
  * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- var COMPONENTNAME = 'atto_templates',
+ var COMPONENTNAME = 'atto_templates4u',
     CSS = {
-        TEMPLATENAME: 'atto_templates_name',
-        PREVIEW: 'atto_templates_preview',
-        INSERT: 'atto_templates_insert',
-        CANCEL: 'atto_templates_cancel'
+        TEMPLATENAME: 'atto_templates4u_name',
+        PREVIEW: 'atto_templates4u_preview',
+        INSERT: 'atto_templates4u_insert',
+        CANCEL: 'atto_templates4u_cancel'
     },
     SELECTORS = {
         TEMPLATES: '.' + CSS.TEMPLATENAME,
@@ -61,10 +61,14 @@
             '</form>'
     };
 
-Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
+Y.namespace('M.atto_templates4u').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
     _content: null,
     _templates: [],
     initializer: function() {
+        if (!this.get('enablebutton')) {
+            return;
+        }
+
         this.addButton({
             icon: 'icon',
             iconComponent: COMPONENTNAME,
@@ -145,6 +149,9 @@ Y.namespace('M.atto_templates').Button = Y.Base.create('button', Y.M.editor_atto
     ATTRS: {
         templates: {
             value: {}
+        },
+        enablebutton: {
+            value: false
         }
     }
 });

@@ -17,17 +17,17 @@
 /**
  * Privacy Subsystem implementation for atto_linkadv.
  *
- * @package    atto_templates
+ * @package    atto_templates4u
  * @copyright  2018 Mark Sharp <m.sharp@chi.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace atto_templates\privacy;
+namespace atto_templates4u\privacy;
 
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * Privacy Subsystem for atto_templates implementing null_provider.
+ * Privacy Subsystem for atto_templates4u implementing null_provider.
  *
  * @copyright  2018 Mark Sharp <m.sharp@chi.ac.uk>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
