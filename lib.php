@@ -37,12 +37,12 @@ function atto_templates4u_strings_for_js() {
          'insert',
          'cancel',
          'preview',
-     ], 'atto_templates4u');
+        ], 'atto_templates4u');
 }
 
 /**
  * Return the js params required for this module
- * @param string elementid Selected element
+ * @param string $elementid Selected element
  * @param stdClass $options - the options for the editor
  * @param stdClass $fpoptions - unused
  * @return array List of templates

@@ -25,6 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Installation function.
+ */
 function xmldb_atto_templates4u_install() {
     $oldplugin = core_plugin_manager::instance()->get_plugin_info('atto_templates');
     if ($oldplugin) {
