@@ -21,7 +21,7 @@ The consequences of this change means that Moodle will regard atto_templates4u a
 
 In the install script I have added a check for the existing atto_templates plugin. If it is found, all the existing settings are copied to atto_templates4u when you install atto_templates4u.
 
-Once atto_templates4u has been installed, you will need to uninstall atto_templates. Go to https://yourmoodle.com/admin/plugins.php and scroll down until you find atto_templates, and click uninstall.
+Once atto_templates4u has been installed, you will need to uninstall atto_templates. Go to <https://yourmoodle.com/admin/plugins.php> and scroll down until you find atto_templates, and click uninstall.
 
 You may need to manually remove the templates directory, depending on your server permissions.
 
@@ -31,7 +31,7 @@ Your atto toolbar probably references templates. Change this to templates4u.
 
 ### Change your remote url
 
-If you are using Git and have a clone or fork of https://github.com/sharpchi/moodle-atto_templates you will need to change this to: https://github.com/sharpchi/moodle-atto_templates4u
+If you are using Git and have a clone or fork of <https://github.com/sharpchi/moodle-atto_templates> you will need to change this to: <https://github.com/sharpchi/moodle-atto_templates4u>
 
 ```shell
 # Git clone with SSH
