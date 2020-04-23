@@ -38,7 +38,7 @@ $string['insert'] = 'Insert';
 $string['cancel'] = 'Cancel';
 $string['preview'] = 'Preview';
 
-$string['templates:usetemplates'] = 'Use templates4U plugin in Atto editor';
+$string['templates4u:usetemplates'] = 'Use templates4U plugin in Atto editor';
 $string['requirecap'] = 'Require capability';
 $string['requirecap_desc'] = 'Require capability before showing templates button';
 
