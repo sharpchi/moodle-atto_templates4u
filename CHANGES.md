@@ -1,5 +1,10 @@
 # Changes
 
+## Version 2020062500
+
+- Incorrect site permission checked in settings
+    Thanks to [Andrea Schenkel](https://github.com/andreasschenkel)
+
 ## Version 2020030400
 
 - Plugin renamed: atto_templates4u (See README.md for information)
