@@ -28,7 +28,7 @@ if (!defined('ATTO_TEMPLATES4U_TEMPLATE_COUNT')) {
 }
 
 
-if (is_siteadmin()) {
+if ($hassiteconfig) {
     $config = get_config('atto_templates4u');
     $ADMIN->add('editoratto', new admin_category('atto_templates4u', new lang_string('pluginname', 'atto_templates4u')));
 
