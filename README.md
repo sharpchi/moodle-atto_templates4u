@@ -46,3 +46,4 @@ $ git remote origin set-url https://github.com/sharpchi/moodle-atto_templates4u.
 Heavily cribbed from [atto_generico](https://github.com/justinhunt/moodle-atto_generico) and [atto_styles](https://github.com/dthies/moodle-atto_styles)
 
 - [Mike Churchward](https://github.com/mchurchward) - for spotting the change in Moodle that stopped the plugin working
+- [Adrian Perez](https://github.com/adpe)
