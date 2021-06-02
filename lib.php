@@ -18,11 +18,11 @@
  * Templates Lib.
  * @package   atto_templates4u
  * @author    Mark Sharp <m.sharp@chi.ac.uk>
- * @copyright 2017 University of Chichester {@link www.chi.ac.uk}
+ * @copyright 2017 University of Chichester {@link https://www.chi.ac.uk}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
 /**
  * Set language strings for js
