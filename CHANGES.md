@@ -1,5 +1,8 @@
 # Changes
 
+## Version 2020062501
+
+- Fix linting
 ## Version 2020062500
 
 - Incorrect site permission checked in settings
