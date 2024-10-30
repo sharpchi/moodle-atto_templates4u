@@ -22,7 +22,6 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-define('ATTO_TEMPLATES4U_TEMPLATE_COUNT', 5);
 /**
  * Set language strings for js
  */
@@ -49,7 +48,7 @@ function atto_templates4u_strings_for_js() {
 function atto_templates4u_params_for_js($elementid, $options, $fpoptions) {
     global $COURSE;
     $templates = get_config('atto_templates4u');
-    $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES4U_TEMPLATE_COUNT;
+    $tcount = ($templates->templatecount) ? $templates->templatecount : 5;
     $items = [];
     for ($i = 1; $i <= $tcount; $i++) {
         $key = 'templatekey_' . $i;

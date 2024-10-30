@@ -23,10 +23,6 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
-if (!defined('ATTO_TEMPLATES4U_TEMPLATE_COUNT')) {
-    define('ATTO_TEMPLATES4U_TEMPLATE_COUNT', 3);
-}
-
 
 if ($hassiteconfig) {
     $config = get_config('atto_templates4u');
@@ -36,13 +32,13 @@ if ($hassiteconfig) {
     $settings->add(new admin_setting_configtext('atto_templates4u/templatecount',
         get_string('templatecount', 'atto_templates4u'),
         get_string('templatecount_desc', 'atto_templates4u'),
-        ATTO_TEMPLATES4U_TEMPLATE_COUNT, PARAM_INT, 20));
+        5, PARAM_INT, 20));
 
 
     if ($config && property_exists($config, 'templatecount')) {
         $templatecount = $config->templatecount;
     } else {
-        $templatecount = ATTO_TEMPLATES4U_TEMPLATE_COUNT;
+        $templatecount = 5;
     }
 
     $settings->add(new admin_setting_configcheckbox('atto_templates4u/cleanhtml',
