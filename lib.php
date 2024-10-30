@@ -22,8 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
+define('ATTO_TEMPLATES4U_TEMPLATE_COUNT', 5);
 /**
  * Set language strings for js
  */
@@ -50,7 +49,7 @@ function atto_templates4u_strings_for_js() {
 function atto_templates4u_params_for_js($elementid, $options, $fpoptions) {
     global $COURSE;
     $templates = get_config('atto_templates4u');
-    $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES_TEMPLATE_COUNT;
+    $tcount = ($templates->templatecount) ? $templates->templatecount : ATTO_TEMPLATES4U_TEMPLATE_COUNT;
     $items = [];
     for ($i = 1; $i <= $tcount; $i++) {
         $key = 'templatekey_' . $i;
@@ -69,7 +68,7 @@ function atto_templates4u_params_for_js($elementid, $options, $fpoptions) {
 
     $coursecontext = context_course::instance($COURSE->id);
     $enablebutton = ($templates->requirecap) ? has_capability('atto/templates4u:usetemplates', $coursecontext) : true;
-    return array('templates' => $items, 'enablebutton' => $enablebutton);
+    return ['templates' => $items, 'enablebutton' => $enablebutton];
 }
 
 /**
@@ -77,6 +76,6 @@ function atto_templates4u_params_for_js($elementid, $options, $fpoptions) {
  */
 function atto_templates4u_get_fontawesome_icon_map() {
     return [
-        'atto_templates4u:icon' => 'fa-wpforms'
+        'atto_templates4u:icon' => 'fa-wpforms',
     ];
 }

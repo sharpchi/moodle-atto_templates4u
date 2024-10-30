@@ -23,6 +23,7 @@
  */
 
  var COMPONENTNAME = 'atto_templates4u',
+    // eslint-disable-next-line no-redeclare
     CSS = {
         TEMPLATENAME: 'atto_templates4u_name',
         PREVIEW: 'atto_templates4u_preview',
